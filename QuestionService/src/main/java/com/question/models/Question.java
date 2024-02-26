@@ -1,5 +1,6 @@
-package com.quiz.model;
+package com.question.models;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -8,7 +9,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import jakarta.persistence.Entity;
 
 @Entity
 @Getter
@@ -16,9 +16,14 @@ import jakarta.persistence.Entity;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Quiz {
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private Long id;
-  private String title;
+public class Question {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    private String question;
+
+    private Long quizId;
+    
 }
