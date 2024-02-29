@@ -8,6 +8,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
+import java.util.List;
+
 import jakarta.persistence.Entity;
 
 @Entity
@@ -21,4 +24,6 @@ public class Quiz {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
   private String title;
+
+  transient private List<Question> questions;
 }
